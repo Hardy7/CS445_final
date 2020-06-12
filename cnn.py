@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # torch.manual_seed(1)    # reproducible
 
 # Hyper Parameters
-EPOCH = 1               # train the training data n times, to save time, we just train 1 epoch
+EPOCH = 5               # train the training data n times, to save time, we just train 1 epoch
 BATCH_SIZE = 50
 LR = 0.001              # learning rate
 DOWNLOAD_MNIST = False
@@ -115,7 +115,7 @@ for epoch in range(EPOCH):
 plt.ioff()
 
 # print 10 predictions from test data
-test_output, _ = cnn(test_x[:10])
+test_output, _ = cnn(test_x[:20])
 pred_y = torch.max(test_output, 1)[1].data.numpy()
 print(pred_y, 'prediction number')
-print(test_y[:10].numpy(), 'real number')
+print(test_y[:20].numpy(), 'real number')
